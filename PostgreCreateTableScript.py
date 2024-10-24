@@ -14,7 +14,13 @@ connection = psycopg2.connect(
 cursor = connection.cursor()
 
 # Przykładowe zapytanie
-query = "SELECT * FROM twoja_tabela LIMIT 10;"
+query = """CREATE TABLE public.pracownicy (
+    id SERIAL PRIMARY KEY,
+    imie VARCHAR(50),
+    nazwisko VARCHAR(50),
+    stanowisko VARCHAR(50),
+    pensja NUMERIC
+);"""
 
 # Wykonaj zapytanie
 cursor.execute(query)
